@@ -3,13 +3,69 @@ let computerWins = 0; // stores total number of computer wins
 let roundNo = 1; // keeps track of round number.
 
 
-//Display formatted into message
-console.log("%cWelcome to Rock, Paper, Scissors", "color: red; font-size: 20px")
-console.log("%cGet ready to get ROCKed!", "color: Blue; font-size: 16px;  font-style: italic;")
-console.log("Best 3 out of 5 wins!")
+
+btnRock.addEventListener("click",function() {startRound("ROCK");});
+btnPaper.addEventListener("click",function() {startRound("PAPER");});
+btnScissors.addEventListener("click",function() {startRound("SCISSORS");});
+
+const playerChoiceDiv = document.querySelector('#playerChoice');
+const computerChoiceDiv = document.querySelector('#computerChoice');
+
+function startRound(player_choice) {
+    let playerChoice = player_choice;
+    let computerChoice = getComputerChoice();
+    //console.log(playerChoice + "  " + computerChoice)
+    playerChoiceDiv.textContent = playerChoice;
+    computerChoiceDiv.textContent = computerChoice;
+
+    let roundWinner = playRound(playerChoice, computerChoice)
+    console.log(roundWinner)
+    
+}
+
+//Check for draw  - if false, check of player won. If false, computer wins. 
+//Return round winner value as "DRAW", "COMPUTER", or "PLAYER"
+function playRound(playerChoice, computerChoice) {
+    if (playerChoice === computerChoice) {
+        return "DRAW";
+    //Check for 3 possible player win conditions. If none are met then computer wins.
+    } else if ((playerChoice === 'ROCK' && computerChoice === 'SCISSORS') ||
+               (playerChoice === 'PAPER' && computerChoice === 'ROCK') ||
+               (playerChoice === 'SCISSORS' && computerChoice === 'PAPER')) {
+                return "PLAYER"
+               }
+        else {
+            return "COMPUTER"
+        }
+
+}
+
+
+/* Return the computers choice of rock, paper, or scissor*/
+function getComputerChoice() {
+    //determine random number of 1-3
+    let randNum = Math.floor(Math.random() * 3 + 1)
+    //return choice as string based on random number
+    switch(randNum) {
+        case 1:
+            return "ROCK";
+            break;
+        case 2:
+            return "SCISSORS"
+            break;
+        case 3:
+            return "PAPER";
+            break;
+    }
+}
+
+//OLD CODE BELOW
+
 
 // primary game loop
-let continueGame = true;
+//let continueGame = true;
+
+let continueGame = false; //stop game during UI dev
 while (continueGame) {
         
     let computerChoice = getComputerChoice();
@@ -54,23 +110,6 @@ while (continueGame) {
 
 
 
-/* Return the computers choice of rock, paper, or scissor*/
-function getComputerChoice() {
-    //determine random number of 1-3
-    let randNum = Math.floor(Math.random() * 3 + 1)
-    //return choice as string based on random number
-    switch(randNum) {
-        case 1:
-            return "ROCK";
-            break;
-        case 2:
-            return "SCISSORS"
-            break;
-        case 3:
-            return "PAPER";
-            break;
-    }
-}
 
 function getPlayerChoice() {
     let keepGoing = true;

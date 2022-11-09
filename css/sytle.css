@@ -43,6 +43,15 @@ body {
     border-radius: 5px;
 }
 
+#choiceContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 85%;
+    max-width: 1000px;
+
+}
+
 .titleElement {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 50pt;
@@ -62,5 +71,5 @@ body {
 }
 
 .vsBar {
-    
+
 }
