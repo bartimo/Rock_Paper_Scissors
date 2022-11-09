@@ -40,6 +40,7 @@ body {
     height: 200px;
     margin-top: 40px;
     background-image: url(../images/bg-black30.png);
+    border-radius: 5px;
 }
 
 .titleElement {
@@ -57,4 +58,9 @@ body {
     height: 170px;
     width: 170px;
     opacity: 100%;
+    border-radius: 10px;
+}
+
+.vsBar {
+    
 }
