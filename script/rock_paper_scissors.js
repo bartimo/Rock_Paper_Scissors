@@ -97,7 +97,8 @@ function getPlayerChoice() {
     }
 }
 
-//Check for draw  - if false, check of player won. If false, computer wins. Return round winner value as "DRAW", "COMPUTER", or "PLAYER"
+//Check for draw  - if false, check of player won. If false, computer wins. 
+//Return round winner value as "DRAW", "COMPUTER", or "PLAYER"
 function playRound(playerChoice, computerChoice) {
     if (playerChoice === computerChoice) {
         return "DRAW";
