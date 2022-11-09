@@ -13,7 +13,7 @@ let continueGame = true;
 while (continueGame) {
         
     let computerChoice = getComputerChoice();
-    let playerChoice = getPlayerChoice();
+    //let playerChoice = getPlayerChoice();
     
     //only continue if player did not cancel
     if (playerChoice) {
