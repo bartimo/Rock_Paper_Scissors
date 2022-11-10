@@ -15,7 +15,7 @@ function startRound(player_choice) {
     let playerChoice = player_choice;
     let computerChoice = getComputerChoice();
     //console.log(playerChoice + "  " + computerChoice)
-    playerChoiceDiv.textContent = playerChoice;
+    playerChoiceDiv.textContent =  playerChoice;
     computerChoiceDiv.textContent = computerChoice;
 
     let roundWinner = playRound(playerChoice, computerChoice)

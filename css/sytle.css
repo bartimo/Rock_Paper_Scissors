@@ -44,12 +44,19 @@ body {
 }
 
 #choiceContainer {
+    padding-top: 25px;
     display: flex;
     justify-content: space-around;
     align-items: center;
     width: 85%;
     max-width: 1000px;
+}
 
+#playerChoiceContainer, #computerChoiceContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .titleElement {
@@ -72,4 +79,8 @@ body {
 
 .vsBar {
 
+}
+
+.choice {
+    font-size: 40px;
 }
