@@ -1,5 +1,6 @@
 html, body {
     margin:0;
+    padding: 0;
     height:100%;
   }
 
@@ -19,10 +20,14 @@ body {
     align-items: center;
     width: 85%;
     height: 90%;
+    background: rgb(36,34,195);
+background: linear-gradient(0deg, rgba(36,34,195,1) 0%, rgba(212,45,253,1) 76%);
+    /*
     background-image: url(../images/bg-battleground.png);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
+    */
 }
 
 #titleContainer {
@@ -57,6 +62,42 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    flex:1;
+    height: 57px;
+}
+
+#winnerContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+#winnerTitle {
+    font-size: 30px;
+}
+
+#winnerImage {
+    background-color: aliceblue;
+    height: 125px;
+    width: 125px;
+    opacity: 100%;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+#scoreContainer {
+    display:flex;
+    justify-content: space-between;
+    width: 90%;
+    margin-top: 60px;
+}
+
+#playerScore, #ComputerScore {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .titleElement {
@@ -73,14 +114,23 @@ body {
     background-color: aliceblue;
     height: 170px;
     width: 170px;
-    opacity: 100%;
     border-radius: 10px;
 }
 
-.vsBar {
 
-}
 
 .choice {
     font-size: 40px;
+}
+
+#btnRock {
+    background-image: url(../images/rock.png);
+}
+
+#btnScissors {
+    background-image: url(../images/scissors.png);
+}
+
+#btnPaper {
+    background-image: url(../images/paper.png);
 }

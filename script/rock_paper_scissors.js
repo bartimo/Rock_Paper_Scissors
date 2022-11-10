@@ -10,16 +10,25 @@ btnScissors.addEventListener("click",function() {startRound("SCISSORS");});
 
 const playerChoiceDiv = document.querySelector('#playerChoice');
 const computerChoiceDiv = document.querySelector('#computerChoice');
+const winnerTitleDiv = document.querySelector('#winnerTitle');
+const winnerImageDiv = document.querySelector('#winnerImage');
 
-function startRound(player_choice) {
-    let playerChoice = player_choice;
+
+function startRound(choice) {
+    let playerChoice = choice;
     let computerChoice = getComputerChoice();
     //console.log(playerChoice + "  " + computerChoice)
     playerChoiceDiv.textContent =  playerChoice;
     computerChoiceDiv.textContent = computerChoice;
 
-    let roundWinner = playRound(playerChoice, computerChoice)
-    console.log(roundWinner)
+    let roundWinner = playRound(playerChoice, computerChoice);
+    if (roundWinner != 'DRAW') {
+        winnerTitleDiv.textContent = roundWinner + " WINS!";
+    } else {
+        winnerTitleDiv.textContent = roundWinner;
+    }
+
+  
     
 }
 
