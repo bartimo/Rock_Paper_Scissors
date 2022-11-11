@@ -25,7 +25,7 @@ function startRound(choice) {
     if (roundWinner != 'DRAW') {
         winnerTitleDiv.textContent = roundWinner + " WINS!";
     } else {
-        winnerTitleDiv.textContent = roundWinner;
+        winnerTitleDiv.textContent = roundWinner;winnerTitleDiv
     }
 
   
