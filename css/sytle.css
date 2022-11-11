@@ -59,8 +59,17 @@ body {
 #playerChoiceContainer, #computerChoiceContainer {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: center;s
     align-items: center;
+}
+
+
+.footer {
+    display: flex;
+    width: 100%;
+    border: 1px solid white;
+    justify-content: space-between;
+    margin-top: 50px;
 }
 
 .titleElement {
@@ -97,3 +106,4 @@ body {
 #btnScissors {
     background-image: url(../images/scissors.png);
 }
+
