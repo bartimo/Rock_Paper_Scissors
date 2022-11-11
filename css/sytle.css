@@ -81,10 +81,19 @@ body {
     border-radius: 10px;
 }
 
-.vsBar {
-
-}
 
 .choice {
     font-size: 40px;
+}
+
+#btnRock {
+    background-image: url(../images/rock.png);
+}
+
+#btnPaper {
+    background-image: url(../images/paper.png);
+}
+
+#btnScissors {
+    background-image: url(../images/scissors.png);
 }
