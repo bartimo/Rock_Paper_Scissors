@@ -56,31 +56,26 @@ body {
     align-items: center;
     width: 85%;
     max-width: 1000px;
-    border: 1px solid white;
-    
 }
 
 #playerChoiceContainer, #computerChoiceContainer {
     display: flex;
     flex-direction: column;
-   
     align-items: center;
     height: 60px;
-    border: 1px solid white;
     flex: 1;
-
 }
 #winnerContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 60px;
 }
 
 #winnerTitle {
     display: flex;
     flex-direction: column;
     font-size: 30px;
-    margin-top: 5px;
 }
 
 .rockWinnerImg {
@@ -113,11 +108,10 @@ body {
 .footer {
     display: flex;
     width: 100%;
-    border: 1px solid white;
     justify-content: space-between;
     max-width: 1000px;
-    height: 160px;
     width: 85%;
+    padding-bottom: 50px;
 }
 
 .scoreBox {
@@ -130,6 +124,7 @@ body {
     align-items: center;
     justify-content: center;
     margin-top: 10px;
+    margin-bottom: 30px;
 }
 
 .titleElement {
