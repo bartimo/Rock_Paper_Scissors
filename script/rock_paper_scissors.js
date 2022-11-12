@@ -12,20 +12,56 @@ const playerChoiceDiv = document.querySelector('#playerChoice');
 const computerChoiceDiv = document.querySelector('#computerChoice');
 const winnerTitleDiv = document.querySelector('#winnerTitle');
 const winnerImageDiv = document.querySelector('#winnerImage');
-
+const computerScoreDiv = document.querySelector('#computerScore');
+const playerScoreDiv = document.querySelector('#playerScore');
 
 function startRound(choice) {
+    clearWinnerImage();
     let playerChoice = choice;
     let computerChoice = getComputerChoice();
-    //console.log(playerChoice + "  " + computerChoice)
+    console.log(playerChoice + "  " + computerChoice)
     playerChoiceDiv.textContent =  playerChoice;
     computerChoiceDiv.textContent = computerChoice;
 
     let roundWinner = playRound(playerChoice, computerChoice);
     if (roundWinner != 'DRAW') {
-        winnerTitleDiv.textContent = roundWinner + " WINS!";
+        winnerTitleDiv.textContent = roundWinner + " WINS!"; 
+    
+        if (roundWinner == "PLAYER") {
+            switch(playerChoice) {
+                case "ROCK":
+                    winnerImageDiv.classList.add('rockWinnerImg');
+                    break;
+                case "PAPER":
+                    winnerImageDiv.classList.add('paperWinnerImg');
+                    break;
+                case "SCISSORS":
+                    winnerImageDiv.classList.add('scissorsWinnerImg');
+                    break;
+            }
+            winnerImageDiv.classList.add("winnerImageDisplay");
+            playerWins += 1;
+            playerScoreDiv.textContent = playerWins;
+
+        } else {
+            switch(computerChoice) {
+                case "ROCK":
+                    winnerImageDiv.classList.add('rockWinnerImg');
+                    break;
+                case "PAPER":
+                    winnerImageDiv.classList.add('paperWinnerImg');
+                    break;
+                case "SCISSORS":
+                    winnerImageDiv.classList.add('scissorsWinnerImg');
+                    break;
+            }
+            winnerImageDiv.classList.add("winnerImageDisplay");
+            computerWins += 1;
+            computerScoreDiv.textContent = computerWins;
+        }
     } else {
-        winnerTitleDiv.textContent = roundWinner;winnerTitleDiv
+        winnerTitleDiv.textContent = roundWinner;
+        winnerImageDiv.classList.remove("winnerImageDisplay")
     }
 
   
@@ -41,10 +77,10 @@ function playRound(playerChoice, computerChoice) {
     } else if ((playerChoice === 'ROCK' && computerChoice === 'SCISSORS') ||
                (playerChoice === 'PAPER' && computerChoice === 'ROCK') ||
                (playerChoice === 'SCISSORS' && computerChoice === 'PAPER')) {
-                return "PLAYER"
+                return "PLAYER";
                }
         else {
-            return "COMPUTER"
+            return "COMPUTER";
         }
 
 }
@@ -66,6 +102,12 @@ function getComputerChoice() {
             return "PAPER";
             break;
     }
+}
+
+function clearWinnerImage() {
+    winnerImageDiv.classList.remove('rockWinnerImg');
+    winnerImageDiv.classList.remove('paperWinnerImg');
+    winnerImageDiv.classList.remove('scissorsWinnerImg');
 }
 
 //OLD CODE BELOW
