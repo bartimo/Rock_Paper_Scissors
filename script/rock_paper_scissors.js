@@ -28,33 +28,14 @@ function startRound(choice) {
         winnerTitleDiv.textContent = roundWinner + " WINS!"; 
     
         if (roundWinner == "PLAYER") {
-            switch(playerChoice) {
-                case "ROCK":
-                    winnerImageDiv.classList.add('rockWinnerImg');
-                    break;
-                case "PAPER":
-                    winnerImageDiv.classList.add('paperWinnerImg');
-                    break;
-                case "SCISSORS":
-                    winnerImageDiv.classList.add('scissorsWinnerImg');
-                    break;
-            }
+
+            winnerImageDiv.classList.add('playerWinnerImg');
             winnerImageDiv.classList.add("winnerImageDisplay");
             playerWins += 1;
             playerScoreDiv.textContent = playerWins;
 
         } else {
-            switch(computerChoice) {
-                case "ROCK":
-                    winnerImageDiv.classList.add('rockWinnerImg');
-                    break;
-                case "PAPER":
-                    winnerImageDiv.classList.add('paperWinnerImg');
-                    break;
-                case "SCISSORS":
-                    winnerImageDiv.classList.add('scissorsWinnerImg');
-                    break;
-            }
+            winnerImageDiv.classList.add('computerWinnerImg');
             winnerImageDiv.classList.add("winnerImageDisplay");
             computerWins += 1;
             computerScoreDiv.textContent = computerWins;
@@ -105,9 +86,8 @@ function getComputerChoice() {
 }
 
 function clearWinnerImage() {
-    winnerImageDiv.classList.remove('rockWinnerImg');
-    winnerImageDiv.classList.remove('paperWinnerImg');
-    winnerImageDiv.classList.remove('scissorsWinnerImg');
+    winnerImageDiv.classList.remove('playerWinnerImg');
+    winnerImageDiv.classList.remove('computerWinnerImg');
 }
 
 //OLD CODE BELOW

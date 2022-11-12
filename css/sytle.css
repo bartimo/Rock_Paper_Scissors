@@ -80,17 +80,14 @@ body {
     font-size: 30px;
 }
 
-.rockWinnerImg {
-    background-image: url(../images/rock.png);
+.playerWinnerImg {
+    background-image: url(../images/cool-kid.png);
 }
 
-.paperWinnerImg {
-    background-image: url(../images/paper.png);
+.computerWinnerImg {
+    background-image: url(../images/evil-pc.png);
 }
 
-.scissorsWinnerImg {
-    background-image: url(../images/scissors.png);
-}
 
 .winnerImageDisplay {
     display: flex;
