@@ -45,7 +45,6 @@ function startRound(choice) {
         winnerImageDiv.classList.remove("winnerImageDisplay")
     }
 
-  
     
 }
 
@@ -84,6 +83,24 @@ function getComputerChoice() {
             break;
     }
 }
+
+//Check for draw  - if false, check of player won. If false, computer wins. 
+//Return round winner value as "DRAW", "COMPUTER", or "PLAYER"
+function playRound(playerChoice, computerChoice) {
+    if (playerChoice === computerChoice) {
+        return "DRAW";
+    //Check for 3 possible player win conditions. If none are met then computer wins.
+    } else if ((playerChoice === 'ROCK' && computerChoice === 'SCISSORS') ||
+               (playerChoice === 'PAPER' && computerChoice === 'ROCK') ||
+               (playerChoice === 'SCISSORS' && computerChoice === 'PAPER')) {
+                return "PLAYER"
+               }
+        else {
+            return "COMPUTER"
+        }
+
+}
+
 
 function clearWinnerImage() {
     winnerImageDiv.classList.remove('playerWinnerImg');
@@ -167,19 +184,3 @@ function getPlayerChoice() {
     }
 }
 
-//Check for draw  - if false, check of player won. If false, computer wins. 
-//Return round winner value as "DRAW", "COMPUTER", or "PLAYER"
-function playRound(playerChoice, computerChoice) {
-    if (playerChoice === computerChoice) {
-        return "DRAW";
-    //Check for 3 possible player win conditions. If none are met then computer wins.
-    } else if ((playerChoice === 'ROCK' && computerChoice === 'SCISSORS') ||
-               (playerChoice === 'PAPER' && computerChoice === 'ROCK') ||
-               (playerChoice === 'SCISSORS' && computerChoice === 'PAPER')) {
-                return "PLAYER"
-               }
-        else {
-            return "COMPUTER"
-        }
-
-}
