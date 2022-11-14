@@ -53,6 +53,10 @@ function startRound(choice) {
         gameWinnerMsgDiV.style.display = 'flex';
         gameWinnerMsgDiV.textContent = "Game over man, game over."
         resetGameBtn.style.display = 'flex';
+
+        document.querySelectorAll('.actionButton').forEach(elem => {
+            elem.disabled = true;
+          });
     }
 
     
