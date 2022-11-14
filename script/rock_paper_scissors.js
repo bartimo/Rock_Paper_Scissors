@@ -9,6 +9,7 @@ const gameRounds = 5;
 btnRock.addEventListener("click",function() {startRound("ROCK");});
 btnPaper.addEventListener("click",function() {startRound("PAPER");});
 btnScissors.addEventListener("click",function() {startRound("SCISSORS");});
+btnResetGame.addEventListener("click", function() {resetGame();});
 
 const playerChoiceDiv = document.querySelector('#playerChoice');
 const computerChoiceDiv = document.querySelector('#computerChoice');
@@ -20,7 +21,7 @@ const gameWinnerMsgDiV = document.querySelector('.gameWinnerMessage');
 const resetGameBtn = document.querySelector('#btnResetGame');
 
 function startRound(choice) {
-    clearWinnerImage();
+    clearWinnerImage(); // prevents incorrect winner image from displaying after 1st round.
     let playerChoice = choice;
     let computerChoice = getComputerChoice();
     console.log(playerChoice + "  " + computerChoice)
@@ -121,6 +122,26 @@ function clearWinnerImage() {
     winnerImageDiv.classList.remove('computerWinnerImg');
 }
 
+function resetGame() {
+   //set scores to zero
+    playerWins = 0;
+    playerScoreDiv.textContent = playerWins;
+    computerWins = 0;
+    computerScoreDiv.textContent = playerWins;
+
+    //enable action buttons
+    document.querySelectorAll('.actionButton').forEach(elem => {
+        elem.disabled = false;
+      });
+
+    //hide game end elements
+    gameWinnerMsgDiV.style.display = 'none';
+    resetGameBtn.style.display = 'none';
+    winnerImageDiv.classList.remove("winnerImageDisplay")
+    winnerTitleDiv.textContent = '';
+    playerChoiceDiv.textContent =  '';
+    computerChoiceDiv.textContent = '';
+}
 
 
 //OLD CODE BELOW
