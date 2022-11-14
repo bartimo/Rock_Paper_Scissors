@@ -1,6 +1,8 @@
 let playerWins = 0; //stores total number of player wins
 let computerWins = 0; // stores total number of computer wins
 let roundNo = 1; // keeps track of round number.
+let gameOver = false;
+const gameRounds = 5;
 
 
 
@@ -14,6 +16,8 @@ const winnerTitleDiv = document.querySelector('#winnerTitle');
 const winnerImageDiv = document.querySelector('#winnerImage');
 const computerScoreDiv = document.querySelector('#computerScore');
 const playerScoreDiv = document.querySelector('#playerScore');
+const gameWinnerMsgDiV = document.querySelector('.gameWinnerMessage');
+const resetGameBtn = document.querySelector('#btnResetGame');
 
 function startRound(choice) {
     clearWinnerImage();
@@ -43,6 +47,12 @@ function startRound(choice) {
     } else {
         winnerTitleDiv.textContent = roundWinner;
         winnerImageDiv.classList.remove("winnerImageDisplay")
+    }
+
+    if (playerWins >= gameRounds || computerWins >=5 ) {
+        gameWinnerMsgDiV.style.display = 'flex';
+        gameWinnerMsgDiV.textContent = "Game over man, game over."
+        resetGameBtn.style.display = 'flex';
     }
 
     
@@ -106,6 +116,8 @@ function clearWinnerImage() {
     winnerImageDiv.classList.remove('playerWinnerImg');
     winnerImageDiv.classList.remove('computerWinnerImg');
 }
+
+
 
 //OLD CODE BELOW
 

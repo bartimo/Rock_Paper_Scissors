@@ -72,6 +72,7 @@ body {
     flex-direction: column;
     align-items: center;
     margin-top: 30px;
+    width: 500px;
 }
 
 #winnerTitle {
@@ -105,15 +106,16 @@ body {
     align-items: center;
     align-self: flex-end;
     padding: 0px 40px;
+    flex: 1;
 }
-.footer {
+.scoreContainer {
     display: flex;
     width: 100%;
     justify-content: space-between;
     max-width: 1000px;
     width: 85%;
-    padding-bottom: 50px;
     height: 180px;
+    
 }
 
 .scoreBox {
@@ -140,14 +142,36 @@ body {
 }
 
 .actionButton {
-    background-color: aliceblue;
+    background-color: white;
     height: 170px;
     width: 170px;
     opacity: 100%;
     border-radius: 10px;
 }
 
+.resetButtonContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding-top: 10px;
+}
 
+#btnResetGame {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    height: 35px;
+    width: 100px;
+    background-color: rgb(169, 172, 12);
+    border-radius: 5px;
+}
+
+.gameWinnerMessage {
+    font-size: 24px;
+    display: none;
+}
 
 .choice {
     font-size: 40px;
@@ -164,4 +188,5 @@ body {
 #btnScissors {
     background-image: url(../images/scissors.png);
 }
+
 
