@@ -50,13 +50,21 @@ function startRound(choice) {
         winnerImageDiv.classList.remove("winnerImageDisplay")
     }
 
+    //Game End Section
     if (playerWins >= gameRounds || computerWins >=5 ) {
         gameWinnerMsgDiV.style.display = 'flex';
-        gameWinnerMsgDiV.textContent = "Game over man, game over."
+        if (playerWins >= 5) {
+            gameWinnerMsgDiV.textContent = "You did it! You saved us all!."
+        } else if(computerWins >= 5) {
+            gameWinnerMsgDiV.textContent = "Game over man, game over. The Computers assimilated us all."
+        }
+        
+        
         resetGameBtn.style.display = 'flex';
 
         document.querySelectorAll('.actionButton').forEach(elem => {
             elem.disabled = true;
+            elem.classList.remove('actionButtonHover');
           });
     }
 
@@ -127,11 +135,12 @@ function resetGame() {
     playerWins = 0;
     playerScoreDiv.textContent = playerWins;
     computerWins = 0;
-    computerScoreDiv.textContent = playerWins;
+    computerScoreDiv.textContent = computerWins;
 
     //enable action buttons
     document.querySelectorAll('.actionButton').forEach(elem => {
         elem.disabled = false;
+        elem.classList.add('actionButtonHover');
       });
 
     //hide game end elements
@@ -141,6 +150,7 @@ function resetGame() {
     winnerTitleDiv.textContent = '';
     playerChoiceDiv.textContent =  '';
     computerChoiceDiv.textContent = '';
+
 }
 
 
